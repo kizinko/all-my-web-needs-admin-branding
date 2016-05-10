@@ -7,6 +7,9 @@
 ChangeLog
 ====================
 
+### 05.10.16 - v-1.1.5 randy-c-1.8
+- test version number auto updater
+
 ### 05.10.16 - v-1.1.4 randy-c-1.7
 - test version number auto updater
 
