@@ -7,6 +7,9 @@
 ChangeLog
 ====================
 
+### 05.10.16 - v-1.1.2 randy-c-1.2
+- repo update test for GitHub updater
+
 ### 05.10.16 - v-1.1.1 randy-c-1.1
 - add GitHub declaration
 
