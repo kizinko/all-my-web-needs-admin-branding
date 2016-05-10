@@ -7,6 +7,9 @@
 ChangeLog
 ====================
 
+### 05.10.16 - v-1.1.3 randy-c-1.4
+- test version number auto updater
+
 ### 05.10.16 - v-1.2.0 randy-c-1.3
 - repo update test for GitHub updater
 
