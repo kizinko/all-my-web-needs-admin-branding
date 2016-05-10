@@ -1,12 +1,13 @@
 <?php
-/**
- * Plugin Name: All My Web Needs - Branding
- * Description: This plugin incorporates custom features created by All My Web Needs.
- * Author: All My Web Needs
- * Author URI: https://allmywebneeds.com
- * Version: 1.1.0
- **/
-####################################################################################################
+/*
+Plugin Name: All My Web Needs - Branding
+Description: This plugin incorporates custom features created by All My Web Needs.
+Author: All My Web Needs
+Author URI: https://allmywebneeds.com
+Version: 1.1.1
+GitHub Plugin URI: https://github.com/kizinko/all-my-web-needs-admin-branding
+GitHub Branch: master
+*/
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

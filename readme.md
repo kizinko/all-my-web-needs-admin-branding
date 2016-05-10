@@ -7,5 +7,8 @@
 ChangeLog
 ====================
 
+### 05.10.16 - v-1.1.1 randy-c-1.1
+- add GitHub declaration
+
 ### 05.10.16 - v-1.1.0 randy-c-1.0
 - initial commit
