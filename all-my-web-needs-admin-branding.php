@@ -4,7 +4,7 @@ Plugin Name: All My Web Needs - Branding
 Description: This plugin incorporates custom features created by All My Web Needs.
 Author: All My Web Needs
 Author URI: https://allmywebneeds.com
-Version: 1.1.2
+Version: 1.2.0
 GitHub Plugin URI: https://github.com/kizinko/all-my-web-needs-admin-branding
 GitHub Branch: master
 */
