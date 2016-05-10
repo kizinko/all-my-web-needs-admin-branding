@@ -1,0 +1,12 @@
+/* Style Admin Area */
+
+.help-tab-content {
+	padding: 15px 0;
+}
+.contextual-help-sidebar {
+	padding-top: 20px;
+}
+#wp-admin-bar-wp-logo > .ab-item .ab-icon {
+	background-image: url(logo-sm.png) !important;
+	background-position: 50% 50% !important;
+}
