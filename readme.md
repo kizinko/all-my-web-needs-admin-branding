@@ -7,6 +7,9 @@
 ChangeLog
 ====================
 
+### 05.12.16 - v-1.2.0 randy-c-2.0
+- update css layout for login page
+
 ### 05.10.16 - v-1.1.6 randy-c-1.9
 - test version number auto updater
 

@@ -4,7 +4,7 @@ Plugin Name: All My Web Needs - Branding
 Description: This plugin incorporates custom features created by All My Web Needs.
 Author: All My Web Needs
 Author URI: https://allmywebneeds.com
-Version: 1.1.6
+Version: 1.2.0
 GitHub Plugin URI: https://github.com/kizinko/all-my-web-needs-admin-branding
 GitHub Branch: master
 */
@@ -15,26 +15,11 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Add Login Logo
- **/
-add_action( 'login_enqueue_scripts', 'login_logo' );
-function login_logo() {
-	?>
-	<style type="text/css">
-	body.login div#login h1 a {
-		background-image: url(<?php echo plugins_url(); ?>/all-my-web-needs/login-top.jpg);
-		padding-bottom: 30px;
-	}
-	</style>
-	<?php
-}
-
-/**
  * Add custom CSS stylesheet for Login Page
  **/
 add_action( 'login_enqueue_scripts', 'login_stylesheet' );
 function login_stylesheet() {
-	wp_enqueue_style( 'amwn-login-style', plugins_url() . "/all-my-web-needs/style-login.css", array(), null );
+	wp_enqueue_style( 'amwn-login-style', plugins_url('all-my-web-needs-admin-branding') . "/style-login.css", array(), null );
 }
 
 /**
@@ -42,7 +27,7 @@ function login_stylesheet() {
  **/
 // add_action( 'admin_head', 'admin_stylesheet' );
 function admin_stylesheet() {
-	echo "<link rel='stylesheet' id='custom_wp_admin_css' href='" . plugins_url() . "/all-my-web-needs/style-admin.css' type='text/css' media='all' />";
+	echo "<link rel='stylesheet' id='custom_wp_admin_css' href='" . plugins_url('all-my-web-needs-admin-branding') . "/all-my-web-needs/style-admin.css' type='text/css' media='all' />";
 }
 
 /**
