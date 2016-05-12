@@ -43,6 +43,9 @@ body.login #backtoblog, body.login #nav {
 	padding-top:0;
 	padding-bottom:7px;
 }
+.login #backtoblog a:hover, .login #nav a:hover {
+	color:#e27e5b;
+}
 body.login #backtoblog {
 	padding-bottom:15px;
 }

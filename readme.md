@@ -7,6 +7,10 @@
 ChangeLog
 ====================
 
+### 05.12.16 - v-1.2.1 randy-c-2.1
+- update to login page css
+- add filters for login form logo link and title
+
 ### 05.12.16 - v-1.2.0 randy-c-2.0
 - update css layout for login page
 

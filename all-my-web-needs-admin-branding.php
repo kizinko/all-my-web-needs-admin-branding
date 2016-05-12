@@ -4,7 +4,7 @@ Plugin Name: All My Web Needs - Branding
 Description: This plugin incorporates custom features created by All My Web Needs.
 Author: All My Web Needs
 Author URI: https://allmywebneeds.com
-Version: 1.2.0
+Version: 1.2.1
 GitHub Plugin URI: https://github.com/kizinko/all-my-web-needs-admin-branding
 GitHub Branch: master
 */
@@ -17,32 +17,48 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Add custom CSS stylesheet for Login Page
  **/
-add_action( 'login_enqueue_scripts', 'login_stylesheet' );
-function login_stylesheet() {
+add_action( 'login_enqueue_scripts', 'login_stylesheet__amwn' );
+function login_stylesheet__amwn() {
 	wp_enqueue_style( 'amwn-login-style', plugins_url('all-my-web-needs-admin-branding') . "/style-login.css", array(), null );
+}
+
+/**
+ * login header url
+ **/
+add_action( 'login_headerurl', 'login_headerurl__amwn' );
+function login_headerurl__amwn() {
+	return home_url();
+}
+
+/**
+ * login header title
+ **/
+add_action( 'login_headertitle', 'login_headertitle__amwn' );
+function login_headertitle__amwn() {
+	return get_bloginfo('name');
 }
 
 /**
  * Add custom CSS stylesheet for Admin Area
  **/
-// add_action( 'admin_head', 'admin_stylesheet' );
-function admin_stylesheet() {
+// add_action( 'admin_head', 'admin_stylesheet__amwn' );
+function admin_stylesheet__amwn() {
 	echo "<link rel='stylesheet' id='custom_wp_admin_css' href='" . plugins_url('all-my-web-needs-admin-branding') . "/all-my-web-needs/style-admin.css' type='text/css' media='all' />";
 }
 
 /**
  * Remove update notification (nag) from top of admin area
  **/
-add_action( 'admin_init', 'no_update_nag' );
-function no_update_nag() {
+add_action( 'admin_init', 'no_update_nag__amwn' );
+function no_update_nag__amwn() {
 	remove_action( 'admin_notices', 'update_nag', 3 );
 }
 
 /**
  * Remove unwanted dashboard widgets for relevant users
  **/
-add_action( 'wp_dashboard_setup', 'wptutsplus_remove_dashboard_widgets' );
-function wptutsplus_remove_dashboard_widgets() {
+add_action( 'wp_dashboard_setup', 'wptutsplus_remove_dashboard_widgets__amwn' );
+function wptutsplus_remove_dashboard_widgets__amwn() {
 	$user = wp_get_current_user();
 	if ( ! $user->has_cap( 'manage_sites' ) ) {
 		remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
@@ -64,8 +80,8 @@ function wptutsplus_remove_dashboard_widgets() {
 /**
  * Move the 'Right Now' dashboard widget to the right hand side
  **/
-add_action( 'wp_dashboard_setup', 'wptutsplus_move_dashboard_widget' );
-function wptutsplus_move_dashboard_widget() {
+add_action( 'wp_dashboard_setup', 'wptutsplus_move_dashboard_widget__amwn' );
+function wptutsplus_move_dashboard_widget__amwn() {
 	$user = wp_get_current_user();
 	if ( ! $user->has_cap( 'manage_sites' ) ) {
 		global $wp_meta_boxes;
@@ -78,15 +94,15 @@ function wptutsplus_move_dashboard_widget() {
 /**
  * Add widgets to dashboard
  **/
-function wptutsplus_add_dashboard_widgets() {
-	wp_add_dashboard_widget( 'wptutsplus_dashboard_welcome', 'Welcome', 'wptutsplus_add_welcome_widget' );
-	wp_add_dashboard_widget( 'wptutsplus_dashboard_links', 'Useful Links', 'wptutsplus_add_links_widget' );
+function wptutsplus_add_dashboard_widgets__amwn() {
+	wp_add_dashboard_widget( 'wptutsplus_dashboard_welcome', 'Welcome', 'wptutsplus_add_welcome_widget__amwn' );
+	wp_add_dashboard_widget( 'wptutsplus_dashboard_links', 'Useful Links', 'wptutsplus_add_links_widget__amwn' );
 }
 
 /**
  * Create "Welcome" widget for dashboard
  **/
-function wptutsplus_add_welcome_widget() {
+function wptutsplus_add_welcome_widget__amwn() {
 
 	?>
 	<p><strong>This CMS (content management system) lets you edit the pages and blog posts on your website.</strong></p>
@@ -103,8 +119,8 @@ function wptutsplus_add_welcome_widget() {
 /**
  * Create "Useful Links" widget for dashboard
  **/
-add_action( 'wp_dashboard_setup', 'wptutsplus_add_dashboard_widgets' );
-function wptutsplus_add_links_widget() {
+add_action( 'wp_dashboard_setup', 'wptutsplus_add_dashboard_widgets__amwn' );
+function wptutsplus_add_links_widget__amwn() {
 	?>
 	<p>Some links to resources which will help you manage your site:</p>
 	<ul>
@@ -117,8 +133,8 @@ function wptutsplus_add_links_widget() {
 /**
  * Add support link in admin toolbar
  **/
-add_action( 'wp_before_admin_bar_render', 'add_support_link_to_toolbar' );
-function add_support_link_to_toolbar() {
+add_action( 'wp_before_admin_bar_render', 'add_support_link_to_toolbar__amwn' );
+function add_support_link_to_toolbar__amwn() {
 	global $wp_admin_bar;
 	$wp_admin_bar->add_node(array(
 		'id'    => 'allmywebneeds-support-link',
@@ -130,8 +146,8 @@ function add_support_link_to_toolbar() {
 /**
  * Replace footer text in admin area
  **/
-add_filter('admin_footer_text', 'remove_footer_admin');
-function remove_footer_admin( $footer ) {
+add_filter('admin_footer_text', 'remove_footer_admin__amwn');
+function remove_footer_admin__amwn( $footer ) {
 	$footer = ' Customized by <a href="http://allmywebneeds.com" target="_blank">All My Web Needs</a> | CMS Developed by <a href="http://www.wordpress.org" target="_blank">WordPress</a> ';
 	return $footer;
 }
