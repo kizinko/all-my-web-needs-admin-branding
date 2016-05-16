@@ -4,7 +4,7 @@ Plugin Name: All My Web Needs - Branding
 Description: This plugin incorporates custom features created by All My Web Needs.
 Author: All My Web Needs
 Author URI: https://allmywebneeds.com
-Version: 1.2.1
+Version: 1.2.2
 GitHub Plugin URI: https://github.com/kizinko/all-my-web-needs-admin-branding
 GitHub Branch: master
 */
@@ -27,7 +27,7 @@ function login_stylesheet__amwn() {
  **/
 add_action( 'login_headerurl', 'login_headerurl__amwn' );
 function login_headerurl__amwn() {
-	return home_url();
+	return "https://allmywebneeds.com/";
 }
 
 /**

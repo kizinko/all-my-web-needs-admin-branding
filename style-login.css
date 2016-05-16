@@ -31,6 +31,7 @@ body.login #login_error, body.login .message {
 }
 body.login form {
 	margin-top:0;
+	padding-bottom:20px;
 	box-shadow:none;
 	-moz-box-shadow:none;
 	-webkit-box-shadow:none;
